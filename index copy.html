@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="조민석 - 반도체 기업 IT 직무를 꿈꾸는 개발자 포트폴리오">
+  <title>조민석 | Cho Min Seok — Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Black+Han+Sans&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          fontFamily: {
+            body: ['"Noto Sans KR"', 'sans-serif'],
+            heading: ['"Noto Sans KR"', 'sans-serif'],
+            english: ['"IBM Plex Sans"', 'sans-serif'],
+            code: ['"JetBrains Mono"', 'monospace'],
+            game: ['"Black Han Sans"', 'sans-serif'],
+          },
+          colors: {
+            accent: 'var(--accent-cyan)',
+            'accent-blue': 'var(--accent-blue)',
+            card: 'var(--bg-card)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-theme text-theme font-body flex flex-col min-h-screen pt-20" style="word-break: keep-all; letter-spacing: -0.02em;">
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative min-h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center overflow-hidden px-8" id="hero">
+      <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+      <div class="relative z-10 max-w-4xl w-full">
+        <div class="inline-block font-code text-sm text-accent border border-accent rounded-full px-4 py-1 mb-8 tracking-wider glow anim-delay-1" data-i18n="hero.badge">SSAFY 수강 중</div>
+        <h1 class="font-heading font-black text-5xl md:text-7xl leading-tight mb-4 anim-delay-2 easter-egg-trigger">
+          <span class="block font-english text-lg md:text-xl text-sec font-medium mb-2 tracking-[3px] uppercase">Cho Min Seok</span>
+          <span data-i18n="hero.name">조민석</span>
+        </h1>
+        <p class="font-english text-2xl md:text-3xl font-semibold gradient-text mb-8 anim-delay-3" data-i18n="hero.headline">반도체 위에 코드를 새기다</p>
+        <p class="text-base md:text-lg text-sec leading-relaxed mb-12 anim-delay-4" data-i18n="hero.sub">
+          안녕하세요, 조민석입니다.<br>반도체 기업의 IT 직무를 꿈꾸는 개발자입니다.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center mb-12 anim-delay-5">
+          <span class="hero-tag font-code text-xs px-4 py-2 bg-[rgba(0,229,255,0.08)] border border-[rgba(0,229,255,0.2)] rounded text-accent cursor-none">SSAFY</span>
+          <span class="hero-tag font-code text-xs px-4 py-2 bg-[rgba(0,229,255,0.08)] border border-[rgba(0,229,255,0.2)] rounded text-accent cursor-none">#Problem_Solver</span>
+          <span class="hero-tag font-code text-xs px-4 py-2 bg-[rgba(0,229,255,0.08)] border border-[rgba(0,229,255,0.2)] rounded text-accent cursor-none">#Developer</span>
+          <span class="hero-tag font-code text-xs px-4 py-2 bg-[rgba(0,229,255,0.08)] border border-[rgba(0,229,255,0.2)] rounded text-accent cursor-none">#Gamer</span>
+        </div>
+        <div class="anim-delay-6">
+          <a href="#about" class="cta-btn inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-base" data-i18n="hero.cta">About Me ↓</a>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <span class="block w-6 h-6 border-r-2 border-b-2 border-accent rotate-45 opacity-50"></span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-24 px-8 max-w-6xl mx-auto" id="about">
+      <div class="text-center mb-16 fade-in">
+        <span class="block font-code text-sm text-accent tracking-[2px] uppercase mb-3" data-i18n="about.label">// About Me</span>
+        <h2 class="font-heading font-black text-4xl md:text-5xl" data-i18n="about.title">Who I Am</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 items-center">
+        <div class="flex justify-center relative fade-in-left">
+          <div class="w-64 h-64 md:w-72 md:h-72 rounded-[20px] p-[3px] bg-gradient-to-br from-accent to-accent-blue glow relative">
+            <div class="w-full h-full rounded-[18px] bg-card flex items-center justify-center text-7xl overflow-hidden relative">
+              <div class="absolute inset-0 rounded-[18px]" style="background: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,229,255,0.03) 20px, rgba(0,229,255,0.03) 21px), repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,229,255,0.03) 20px, rgba(0,229,255,0.03) 21px);"></div>
+              <span class="relative z-10 easter-egg-trigger">👨‍💻</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in-right">
+          <p class="text-sec leading-loose text-base md:text-lg mb-6" data-i18n="about.p1">
+            저는 <strong>"왜?"</strong>라는 질문에서 시작하는 개발자입니다.
+          </p>
+          <p class="text-sec leading-loose text-base md:text-lg mb-6" data-i18n="about.p2">
+            대학에서 기초를 다지고, KDT 프로그램에서 실무를 익히고, 지금은 SSAFY에서 더 단단한 개발자로 성장하고 있습니다.
+          </p>
+          <p class="text-sec leading-loose text-base md:text-lg mb-6" data-i18n="about.p3">
+            <strong>반도체는 모든 기술의 시작점입니다.</strong><br>그 시작점 위에서 동작하는 소프트웨어를 만드는 것 —<br>그것이 제가 가장 하고 싶은 일입니다.
+          </p>
+          <p class="text-sec leading-loose text-base md:text-lg mb-8" data-i18n="about.p4">
+            코드 한 줄이 칩 위에서 어떻게 동작하는지 이해하는 개발자,<br>문제의 근본 원인을 파고드는 개발자가 되겠습니다.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+            <div class="highlight-item text-center p-5 bg-card rounded-xl border border-theme cursor-none">
+              <div class="text-3xl mb-2">🎯</div>
+              <div class="text-xs text-sec leading-relaxed mb-1">목표</div>
+              <div class="font-code text-sm text-accent mt-1" data-i18n="about.goal">반도체 IT 직무</div>
+            </div>
+            <div class="highlight-item text-center p-5 bg-card rounded-xl border border-theme cursor-none">
+              <div class="text-3xl mb-2">📚</div>
+              <div class="text-xs text-sec leading-relaxed mb-1">학습</div>
+              <div class="font-code text-sm text-accent mt-1" data-i18n="about.learning">SSAFY 과정 중</div>
+            </div>
+            <div class="highlight-item text-center p-5 bg-card rounded-xl border border-theme cursor-none">
+              <div class="text-3xl mb-2">🔧</div>
+              <div class="text-xs text-sec leading-relaxed mb-1">강점</div>
+              <div class="font-code text-sm text-accent mt-1" data-i18n="about.strength">끈기 있는 문제 해결</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Common JS Modules -->
+  <script src="js/theme.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/scroll-bar.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/easter-egg.js"></script>
+  
+  <!-- Page Specific JS -->
+  <script src="js/particles.js"></script>
+
+  <!-- Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initCursor();
+      initScrollBar();
+      initNav('home');
+      initFooter();
+      initI18n();
+      initEasterEggs();
+      
+      // Initialize particles
+      initParticles('particle-canvas');
+      
+      // Scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, index * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

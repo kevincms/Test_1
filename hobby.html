@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조민석 | Cho Min Seok — Hobby & Arcade</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          fontFamily: {
+            body: ['"Noto Sans KR"', 'sans-serif'],
+            heading: ['"Noto Sans KR"', 'sans-serif'],
+            english: ['"IBM Plex Sans"', 'sans-serif'],
+            code: ['"JetBrains Mono"', 'monospace'],
+            game: ['"Black Han Sans"', 'sans-serif'],
+          },
+          colors: {
+            accent: 'var(--accent-cyan)',
+            'accent-blue': 'var(--accent-blue)',
+            card: 'var(--bg-card)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-theme text-theme font-body flex flex-col min-h-screen pt-20" style="word-break: keep-all; letter-spacing: -0.02em;">
+
+  <main class="flex-grow">
+    
+    <!-- Games Section -->
+    <section class="py-24 px-8 max-w-6xl mx-auto" id="hobby">
+      <div class="text-center mb-16 fade-in">
+        <span class="block font-code text-sm text-accent tracking-[2px] uppercase mb-3" data-i18n="hobby.label">// After Hours</span>
+        <h2 class="font-heading font-black text-4xl md:text-5xl mb-4" data-i18n="hobby.title">Level Up</h2>
+        <p class="text-sec text-base md:text-lg" data-i18n="hobby.subtitle">코드를 내려놓으면, 다른 세계에서 레벨업합니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Game 1: Eternal Return -->
+        <div class="game-card bg-card rounded-2xl overflow-hidden border border-theme relative group fade-in">
+          <div class="h-48 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10"></div>
+            <img src="images/eternal_return.jpg" alt="이터널 리턴" class="game-img w-full h-full object-cover">
+            <div class="absolute top-4 right-4 z-20 bg-[rgba(0,0,0,0.6)] backdrop-blur px-3 py-1 rounded text-xs font-code text-accent border border-[rgba(0,229,255,0.3)]">MOBA Battle Royale</div>
+          </div>
+          <div class="p-6 relative z-20 -mt-8">
+            <h3 class="font-game text-3xl tracking-wide mb-2">이터널 리턴</h3>
+            <p class="text-sm text-sec leading-relaxed mb-4">루트 최적화와 순간적인 판단력. 데이터 기반의 의사결정이 생존을 좌우합니다.</p>
+            <div class="game-insight flex items-start gap-2 bg-[rgba(0,229,255,0.05)] p-3 rounded-lg border border-[rgba(0,229,255,0.1)]">
+              <span class="text-accent">💡</span>
+              <p class="text-xs text-sec">"변수를 통제하고 최적의 경로를 설계하는 과정은 알고리즘 최적화와 닮았습니다."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 2: Dave the Diver -->
+        <div class="game-card bg-card rounded-2xl overflow-hidden border border-theme relative group fade-in">
+          <div class="h-48 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10"></div>
+            <img src="images/dave_the_diver.jpg" alt="데이브 더 다이버" class="game-img w-full h-full object-cover">
+            <div class="absolute top-4 right-4 z-20 bg-[rgba(0,0,0,0.6)] backdrop-blur px-3 py-1 rounded text-xs font-code text-accent border border-[rgba(0,229,255,0.3)]">Adventure RPG</div>
+          </div>
+          <div class="p-6 relative z-20 -mt-8">
+            <h3 class="font-game text-3xl tracking-wide mb-2">데이브 더 다이버</h3>
+            <p class="text-sm text-sec leading-relaxed mb-4">낮에는 탐험, 밤에는 경영. 두 가지 서로 다른 시스템의 완벽한 조화.</p>
+            <div class="game-insight flex items-start gap-2 bg-[rgba(0,229,255,0.05)] p-3 rounded-lg border border-[rgba(0,229,255,0.1)]">
+              <span class="text-accent">💡</span>
+              <p class="text-xs text-sec">"프론트엔드와 백엔드가 매끄럽게 연결되듯, 이질적인 요소들의 통합을 배웁니다."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 3: Skul -->
+        <div class="game-card bg-card rounded-2xl overflow-hidden border border-theme relative group fade-in">
+          <div class="h-48 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10"></div>
+            <img src="images/skul.jpg" alt="Skul" class="game-img w-full h-full object-cover" style="object-position: top;">
+            <div class="absolute top-4 right-4 z-20 bg-[rgba(0,0,0,0.6)] backdrop-blur px-3 py-1 rounded text-xs font-code text-accent border border-[rgba(0,229,255,0.3)]">Roguelite Action</div>
+          </div>
+          <div class="p-6 relative z-20 -mt-8">
+            <h3 class="font-game text-3xl tracking-wide mb-2">스컬 (Skul)</h3>
+            <p class="text-sm text-sec leading-relaxed mb-4">수많은 실패 끝에 찾아내는 단 하나의 완벽한 시너지 빌드.</p>
+            <div class="game-insight flex items-start gap-2 bg-[rgba(0,229,255,0.05)] p-3 rounded-lg border border-[rgba(0,229,255,0.1)]">
+              <span class="text-accent">💡</span>
+              <p class="text-xs text-sec">"수백 번의 컴파일 에러를 마주해도, 결국 작동하는 코드를 작성하는 끈기입니다."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 4: Dungreed -->
+        <div class="game-card bg-card rounded-2xl overflow-hidden border border-theme relative group fade-in">
+          <div class="h-48 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10"></div>
+            <img src="images/dungreed.jpg" alt="Dungreed" class="game-img w-full h-full object-cover">
+            <div class="absolute top-4 right-4 z-20 bg-[rgba(0,0,0,0.6)] backdrop-blur px-3 py-1 rounded text-xs font-code text-accent border border-[rgba(0,229,255,0.3)]">2D Roguelite</div>
+          </div>
+          <div class="p-6 relative z-20 -mt-8">
+            <h3 class="font-game text-3xl tracking-wide mb-2">던그리드</h3>
+            <p class="text-sm text-sec leading-relaxed mb-4">끝없이 변화하는 던전 속에서 살아남기 위한 적응력 테스트.</p>
+            <div class="game-insight flex items-start gap-2 bg-[rgba(0,229,255,0.05)] p-3 rounded-lg border border-[rgba(0,229,255,0.1)]">
+              <span class="text-accent">💡</span>
+              <p class="text-xs text-sec">"빠르게 변화하는 IT 트렌드 속에서 새로운 기술 스택에 적응하는 연습입니다."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 5: Elden Ring -->
+        <div class="game-card bg-card rounded-2xl overflow-hidden border border-theme relative group fade-in lg:col-span-2">
+          <div class="h-48 overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10"></div>
+            <img src="images/elden_ring.jpg" alt="엘든링" class="game-img w-full h-full object-cover">
+            <div class="absolute top-4 right-4 z-20 bg-[rgba(0,0,0,0.6)] backdrop-blur px-3 py-1 rounded text-xs font-code text-accent border border-[rgba(0,229,255,0.3)]">Action RPG</div>
+          </div>
+          <div class="p-6 relative z-20 -mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <h3 class="font-game text-3xl tracking-wide mb-2">엘든링 (Elden Ring)</h3>
+              <p class="text-sm text-sec leading-relaxed mb-4 max-w-lg">압도적인 스케일과 무자비한 난이도. 포기하지 않고 패턴을 분석해 결국 거대한 보스를 쓰러뜨리는 쾌감.</p>
+            </div>
+            <div class="game-insight flex items-start gap-2 bg-[rgba(0,229,255,0.05)] p-3 rounded-lg border border-[rgba(0,229,255,0.1)] md:max-w-xs w-full">
+              <span class="text-accent">💡</span>
+              <p class="text-xs text-sec">"거대한 레거시 시스템을 리팩토링하거나 복잡한 버그를 해결했을 때의 성취감과 완벽히 일치합니다."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16 fade-in font-english text-lg" data-i18n="hobby.footer">
+        게임에서 배운 것: <span class="text-accent">실패는 데이터이고, 재시도는 최적화입니다.</span>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="max-w-4xl mx-auto h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-30 my-12"></div>
+
+    <!-- Mini Games Section -->
+    <section class="py-16 px-8 max-w-6xl mx-auto" id="minigames">
+      <div class="text-center mb-16 fade-in">
+        <span class="block font-code text-sm text-accent tracking-[2px] uppercase mb-3" data-i18n="minigame.label">// Mini Games</span>
+        <h2 class="font-heading font-black text-4xl md:text-5xl mb-4" data-i18n="minigame.title">Arcade Zone</h2>
+        <p class="text-sec text-base md:text-lg mb-8" data-i18n="minigame.subtitle">잠깐 쉬어가세요! 간단한 미니게임을 즐겨보세요.</p>
+        <button id="game-toggle-btn" class="cta-btn inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-sm cursor-none">
+          🔄 Switch Game (Snake ↔ Dino)
+        </button>
+      </div>
+
+      <div class="perspective-1000 max-w-3xl mx-auto fade-in h-[400px] relative" id="game-flip-container">
+        <div class="w-full h-full relative transition-transform duration-700 preserve-3d" id="game-flip-inner">
+          
+          <!-- Front Side: Snake -->
+          <div class="absolute w-full h-full backface-hidden active-game" id="face-snake">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-2xl">🐍</span>
+              <h3 class="font-game text-xl tracking-wide">네온 스네이크</h3>
+              <span class="ml-auto font-code text-xs text-sec border border-theme px-2 py-1 rounded">WASD / 화살표</span>
+            </div>
+            <div id="snake-container" class="minigame-container w-full h-[320px] bg-[#0A0E17] flex justify-center items-center relative p-2"></div>
+          </div>
+
+          <!-- Back Side: Dino -->
+          <div class="absolute w-full h-full backface-hidden rotate-y-180" id="face-dino">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-2xl">🦖</span>
+              <h3 class="font-game text-xl tracking-wide">사이버 다이노</h3>
+              <span class="ml-auto font-code text-xs text-sec border border-theme px-2 py-1 rounded">SPACE / 탭</span>
+            </div>
+            <div id="dino-container" class="minigame-container w-full h-[320px] bg-[#0A0E17] flex justify-center items-center relative p-2"></div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="max-w-4xl mx-auto h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-30 my-12"></div>
+
+    <!-- Guestbook Section -->
+    <section class="py-16 px-8 max-w-4xl mx-auto mb-24" id="guestbook">
+      <div class="text-center mb-12 fade-in">
+        <span class="block font-code text-sm text-accent tracking-[2px] uppercase mb-3" data-i18n="guestbook.label">// Guestbook</span>
+        <h2 class="font-heading font-black text-3xl md:text-4xl mb-4" data-i18n="guestbook.title">방명록</h2>
+        <p class="text-sec text-sm md:text-base" data-i18n="guestbook.subtitle">방문 기념으로 한마디 남겨주세요!</p>
+      </div>
+
+      <div class="bg-card rounded-2xl p-6 md:p-8 border border-theme shadow-[0_0_30px_rgba(0,0,0,0.2)] fade-in">
+        <div id="guestbook-container">
+          <!-- Guestbook UI will be injected here by guestbook.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Common JS Modules -->
+  <script src="js/theme.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/scroll-bar.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/easter-egg.js"></script>
+  <script src="js/guestbook.js"></script>
+
+  <!-- Minigame JS -->
+  <script src="js/snake.js"></script>
+  <script src="js/dino.js"></script>
+
+  <!-- Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initCursor();
+      initScrollBar();
+      initNav('hobby');
+      initFooter();
+      initI18n();
+      initEasterEggs();
+      initGuestbook('guestbook-container');
+      
+      // Initialize games
+      if(typeof initSnakeGame === 'function') initSnakeGame('snake-container');
+      if(typeof initDinoGame === 'function') initDinoGame('dino-container');
+
+      // 3D Flip Toggle Logic
+      const flipInner = document.getElementById('game-flip-inner');
+      const toggleBtn = document.getElementById('game-toggle-btn');
+      const faceSnake = document.getElementById('face-snake');
+      const faceDino = document.getElementById('face-dino');
+      
+      if (toggleBtn && flipInner) {
+        toggleBtn.addEventListener('click', () => {
+          const isFlipped = flipInner.classList.contains('rotate-y-180');
+          if (isFlipped) {
+            flipInner.classList.remove('rotate-y-180');
+            faceSnake.classList.add('active-game');
+            faceDino.classList.remove('active-game');
+          } else {
+            flipInner.classList.add('rotate-y-180');
+            faceDino.classList.add('active-game');
+            faceSnake.classList.remove('active-game');
+          }
+        });
+      }
+
+      // Scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, index * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

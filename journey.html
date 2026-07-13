@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조민석 | Cho Min Seok — Journey</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          fontFamily: {
+            body: ['"Noto Sans KR"', 'sans-serif'],
+            heading: ['"Noto Sans KR"', 'sans-serif'],
+            english: ['"IBM Plex Sans"', 'sans-serif'],
+            code: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            accent: 'var(--accent-cyan)',
+            'accent-blue': 'var(--accent-blue)',
+            card: 'var(--bg-card)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-theme text-theme font-body flex flex-col min-h-screen pt-20" style="word-break: keep-all; letter-spacing: -0.02em;">
+
+  <main class="flex-grow">
+    <!-- Journey Section -->
+    <section class="py-24 px-8 max-w-4xl mx-auto" id="journey">
+      <div class="text-center mb-24 fade-in">
+        <span class="block font-code text-sm text-accent tracking-[2px] uppercase mb-3" data-i18n="journey.label">// My Journey</span>
+        <h2 class="font-heading font-black text-4xl md:text-5xl mb-4" data-i18n="journey.title">My Journey</h2>
+        <p class="text-sec text-base md:text-lg" data-i18n="journey.subtitle">매 단계마다 더 깊이, 더 넓게 — 멈추지 않는 성장 기록</p>
+      </div>
+
+      <div class="relative py-8">
+        <!-- Center Line -->
+        <div class="timeline-line hidden md:block"></div>
+        <div class="absolute left-[15px] top-0 bottom-0 w-[2px] bg-[rgba(0,229,255,0.2)] md:hidden"></div>
+
+        <!-- Future Goal -->
+        <div class="relative flex justify-end md:justify-center items-center mb-20 fade-in pl-12 md:pl-0">
+          <div class="absolute left-[6px] md:left-1/2 -translate-x-[50%] w-[20px] h-[20px] rounded-full bg-theme border-4 border-accent-blue z-10 shadow-[0_0_15px_rgba(41,121,255,0.3)] animate-pulse"></div>
+          
+          <div class="w-full md:w-[45%] bg-card rounded-2xl p-6 border border-accent-blue shadow-[0_0_20px_rgba(41,121,255,0.1)] timeline-card cursor-none relative">
+            <span class="font-code text-xs text-accent-blue bg-[rgba(41,121,255,0.1)] px-3 py-1 rounded border border-[rgba(41,121,255,0.3)] inline-block mb-3">Future</span>
+            <h3 class="font-bold text-xl mb-2 text-theme">반도체 기업 IT 직무 입사</h3>
+            <p class="text-sec text-sm leading-relaxed">
+              제조 공정과 IT 기술을 연결하는 전문가로 성장하여, 대한민국 반도체 산업의 경쟁력 강화에 기여합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- SSAFY -->
+        <div class="relative flex justify-end md:justify-start items-center mb-20 fade-in pl-12 md:pl-0">
+          <div class="absolute left-[6px] md:left-1/2 -translate-x-[50%] w-[18px] h-[18px] rounded-full bg-accent border-[3px] border-accent z-10 shadow-[0_0_15px_rgba(0,229,255,0.4)]"></div>
+          
+          <div class="w-full md:w-[45%] bg-card rounded-2xl p-6 border border-theme timeline-card cursor-none text-left md:text-right relative">
+            <span class="font-code text-xs text-accent bg-[rgba(0,229,255,0.1)] px-3 py-1 rounded border border-[rgba(0,229,255,0.3)] inline-block mb-3">Present</span>
+            <h3 class="font-bold text-xl mb-2 text-theme">SSAFY 과정 수강</h3>
+            <p class="text-sec text-sm leading-relaxed mb-4">
+              알고리즘적 사고, 클린 코드, 프레임워크 활용 및 협업 능력을 체계적으로 학습하며 실무형 인재로 거듭나고 있습니다.
+            </p>
+            <div class="flex flex-wrap gap-2 justify-start md:justify-end">
+              <span class="text-[10px] text-sec px-2 py-1 bg-[rgba(255,255,255,0.05)] rounded border border-[rgba(255,255,255,0.1)]">알고리즘</span>
+              <span class="text-[10px] text-sec px-2 py-1 bg-[rgba(255,255,255,0.05)] rounded border border-[rgba(255,255,255,0.1)]">협업 프로젝트</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- KDT -->
+        <div class="relative flex justify-end md:justify-end items-center mb-20 fade-in pl-12 md:pl-0">
+          <div class="absolute left-[6px] md:left-1/2 -translate-x-[50%] w-[18px] h-[18px] rounded-full bg-theme border-[3px] border-accent z-10 shadow-[0_0_10px_rgba(0,229,255,0.2)]"></div>
+          
+          <div class="w-full md:w-[45%] bg-card rounded-2xl p-6 border border-theme timeline-card cursor-none text-left relative">
+            <span class="font-code text-xs text-sec bg-[rgba(255,255,255,0.05)] px-3 py-1 rounded border border-[rgba(255,255,255,0.1)] inline-block mb-3">2023 - 2024</span>
+            <h3 class="font-bold text-xl mb-2 text-theme">KDT 프로그램 이수</h3>
+            <p class="text-sec text-sm leading-relaxed mb-4">
+              집중적인 개발 교육을 통해 프로그래밍 언어의 깊은 이해와 웹 애플리케이션 개발 사이클을 경험했습니다.
+            </p>
+            <div class="flex flex-wrap gap-2 justify-start">
+              <span class="text-[10px] text-sec px-2 py-1 bg-[rgba(255,255,255,0.05)] rounded border border-[rgba(255,255,255,0.1)]">웹 개발</span>
+              <span class="text-[10px] text-sec px-2 py-1 bg-[rgba(255,255,255,0.05)] rounded border border-[rgba(255,255,255,0.1)]">실무 프로젝트</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- University -->
+        <div class="relative flex justify-end md:justify-start items-center mb-10 fade-in pl-12 md:pl-0">
+          <div class="absolute left-[6px] md:left-1/2 -translate-x-[50%] w-[18px] h-[18px] rounded-full bg-theme border-[3px] border-accent z-10 shadow-[0_0_10px_rgba(0,229,255,0.2)]"></div>
+          
+          <div class="w-full md:w-[45%] bg-card rounded-2xl p-6 border border-theme timeline-card cursor-none text-left md:text-right relative">
+            <span class="font-code text-xs text-sec bg-[rgba(255,255,255,0.05)] px-3 py-1 rounded border border-[rgba(255,255,255,0.1)] inline-block mb-3">2018 - 2024</span>
+            <h3 class="font-bold text-xl mb-2 text-theme">국민대학교 졸업</h3>
+            <p class="text-sec text-sm leading-relaxed mb-4">
+              전공 기초 지식을 탄탄히 다지고, IT 기술에 대한 관심을 바탕으로 문제 해결 능력을 길렀습니다.
+            </p>
+            <div class="flex flex-wrap gap-2 justify-start md:justify-end">
+              <span class="text-[10px] text-sec px-2 py-1 bg-[rgba(255,255,255,0.05)] rounded border border-[rgba(255,255,255,0.1)]">기초 역량</span>
+              <span class="text-[10px] text-sec px-2 py-1 bg-[rgba(255,255,255,0.05)] rounded border border-[rgba(255,255,255,0.1)]">논리적 사고</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Common JS Modules -->
+  <script src="js/theme.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/scroll-bar.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/easter-egg.js"></script>
+
+  <!-- Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initCursor();
+      initScrollBar();
+      initNav('journey');
+      initFooter();
+      initI18n();
+      initEasterEggs();
+      
+      // Scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, index * 150); // Stagger timeline elements slightly more
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
