@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 서비스 비교 가이드</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --surface: rgba(255, 255, 255, 0.08);
+        --surface-strong: rgba(255, 255, 255, 0.12);
+        --text: #f5f7ff;
+        --muted: #9fb0c8;
+        --accent: #6ee7f9;
+        --accent-2: #8b5cf6;
+        --border: rgba(255, 255, 255, 0.16);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Pretendard", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(110, 231, 249, 0.2), transparent 30%),
+          linear-gradient(135deg, var(--bg), #101b2e 60%, #0a1424);
+        min-height: 100vh;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .container {
+        width: min(1120px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(18px);
+        background: rgba(7, 17, 31, 0.72);
+        border-bottom: 1px solid var(--border);
+        z-index: 10;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        font-weight: 800;
+        font-size: 1.05rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        color: var(--muted);
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      main { padding: 2rem 0 5rem; }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2rem;
+        align-items: center;
+        padding: 3rem 0 2rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3.3rem);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 0.8rem 1.25rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+      }
+      .btn-secondary {
+        background: var(--surface);
+        border-color: var(--border);
+      }
+
+      .hero-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 1.2rem;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
+      }
+
+      .hero-card h2 {
+        margin: 0 0 0.8rem;
+        font-size: 1.1rem;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .pill {
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.1);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      section {
+        margin-top: 2.5rem;
+      }
+
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 1rem;
+      }
+
+      .section-title h3 {
+        font-size: 1.35rem;
+        margin: 0;
+      }
+
+      .section-title span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .service-switch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .service-switch button {
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .service-switch button.active {
+        background: linear-gradient(135deg, rgba(110,231,249,0.22), rgba(139,92,246,0.2));
+        border-color: rgba(110,231,249,0.4);
+      }
+
+      .panel {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 1rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 1.2rem;
+      }
+
+      .panel-card {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 18px;
+        padding: 1rem;
+      }
+
+      .panel-card h4 {
+        margin: 0 0 0.7rem;
+        font-size: 1rem;
+      }
+
+      .panel-card p, .panel-card li {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .panel-card ul {
+        padding-left: 1rem;
+        margin: 0;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 0.8rem;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 640px;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 0.9rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .comparison-table thead th {
+        background: rgba(255, 255, 255, 0.08);
+        font-weight: 700;
+      }
+
+      .comparison-table tbody th {
+        background: rgba(255, 255, 255, 0.04);
+        min-width: 120px;
+      }
+
+      .comparison-table tr:last-child td,
+      .comparison-table tr:last-child th {
+        border-bottom: none;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .info-card {
+        background: var(--surface);
+        padding: 1rem;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+      }
+
+      .info-card h4 {
+        margin-top: 0;
+        margin-bottom: 0.6rem;
+      }
+
+      .quiz-box {
+        padding: 1.2rem;
+        border-radius: 24px;
+        background: linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+        border: 1px solid var(--border);
+      }
+
+      .quiz-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1rem;
+      }
+
+      .quiz-options button {
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.08);
+        color: var(--text);
+        padding: 0.7rem 0.95rem;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+
+      .recommendation {
+        margin-top: 1rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      footer {
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .hero, .panel, .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#top">AI Navigator</a>
+        <nav class="nav-links">
+          <a href="#compare">비교</a>
+          <a href="#guide">추천 가이드</a>
+          <a href="#footer">문의</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <div class="container hero">
+        <div>
+          <h1>OpenAI, Claude, Google —<br />어떤 AI가 나에게 맞을까?</h1>
+          <p>
+            글쓰기, 코딩, 연구, 고객 응대까지. 각 AI 서비스의 장단점과 사용 용도를 한눈에 비교해보며,
+            상황별로 가장 적합한 선택지를 확인해보세요.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#compare">서비스 비교 보기</a>
+            <a class="btn btn-secondary" href="#guide">추천 테스트 하기</a>
+          </div>
+          <div class="pill-list">
+            <span class="pill">문서 요약</span>
+            <span class="pill">코드 작성</span>
+            <span class="pill">브레인스토밍</span>
+            <span class="pill">번역</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>핵심 요약</h2>
+          <p>
+            OpenAI는 범용성과 대화형 경험이 강하고, Claude는 긴 문서 처리와 정제된 답변이 좋으며,
+            Google은 실시간 정보와 생태계 연결에 강합니다.
+          </p>
+          <div class="pill-list">
+            <span class="pill">빠른 실험</span>
+            <span class="pill">정확한 분석</span>
+            <span class="pill">실무 연동</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="compare">
+        <div class="section-title">
+          <h3>서비스 비교</h3>
+          <span>클릭하면 특징이 바뀝니다</span>
+        </div>
+
+        <div class="service-switch" id="serviceSwitch"></div>
+
+        <div class="panel" id="servicePanel">
+          <div class="panel-card">
+            <h4 id="serviceName">OpenAI</h4>
+            <p id="serviceDesc"></p>
+          </div>
+          <div class="panel-card">
+            <h4>추천 포인트</h4>
+            <ul id="serviceStrengths"></ul>
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 1.4rem;">
+          <h3>한눈에 보는 비교표</h3>
+          <span>항목별 차이를 바로 확인하세요</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>OpenAI</th>
+                <th>Claude</th>
+                <th>Google</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>강점</th>
+                <td>범용성, 자연스러운 대화, 창의적 제안</td>
+                <td>긴 문서 요약, 정제된 분석, 안정적인 문맥 이해</td>
+                <td>실시간 정보, 검색 연결, 업무 연계</td>
+              </tr>
+              <tr>
+                <th>추천 상황</th>
+                <td>글쓰기, 코드 생성, 브레인스토밍</td>
+                <td>보고서, 계약서, 긴 텍스트 정리</td>
+                <td>최신 정보 확인, 검색 중심 업무</td>
+              </tr>
+              <tr>
+                <th>한 줄 평가</th>
+                <td>다양한 작업에 가볍게 쓰기 좋음</td>
+                <td>문서 분석과 정리형 작업에 강함</td>
+                <td>정보 탐색과 실무 연결에 유리함</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="container" id="guide">
+        <div class="section-title">
+          <h3>사용 목적별 추천 가이드</h3>
+          <span>당신의 상황에 맞는 AI를 골라보세요</span>
+        </div>
+
+        <div class="grid-3">
+          <div class="info-card">
+            <h4>1. 콘텐츠 제작</h4>
+            <p>블로그, SNS, 광고 문구를 빠르게 만들고 싶다면 OpenAI가 무난합니다.</p>
+          </div>
+          <div class="info-card">
+            <h4>2. 긴 문서 분석</h4>
+            <p>긴 보고서, 계약서, 논문을 읽고 요약하는 일이 많다면 Claude가 강점이 있습니다.</p>
+          </div>
+          <div class="info-card">
+            <h4>3. 검색·업무 연계</h4>
+            <p>실시간 정보 탐색과 Google 생태계와의 연동이 중요하다면 Google 쪽이 유리합니다.</p>
+          </div>
+        </div>
+
+        <div class="quiz-box" style="margin-top: 1rem;">
+          <h4>빠른 추천 테스트</h4>
+          <p>가장 자주 하는 작업을 하나 선택해보세요.</p>
+          <div class="quiz-options">
+            <button data-goal="문서 요약">문서 요약</button>
+            <button data-goal="코드 작성">코드 작성</button>
+            <button data-goal="아이디어 발상">아이디어 발상</button>
+            <button data-goal="실시간 정보 찾기">실시간 정보 찾기</button>
+          </div>
+          <div class="recommendation" id="quizResult">선택해주시면 추천 결과를 보여드릴게요.</div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="container">
+        만든이: AI Navigator | 순수 HTML, CSS, JavaScript로 구현된 원페이지 소개 사이트
+      </div>
+    </footer>
+
+    <script>
+      const services = [
+        {
+          name: "OpenAI",
+          desc: "대화형 경험과 폭넓은 활용성이 강점입니다. 글쓰기, 코드 생성, 아이디어 확장에 아주 무난하게 사용할 수 있어요.",
+          strengths: [
+            "다양한 작업에 범용적으로 쓰기 좋음",
+            "프롬프트 응답이 자연스럽고 빠르게 이어짐",
+            "개인용, 업무용 모두 활용도가 높음"
+          ]
+        },
+        {
+          name: "Claude",
+          desc: "긴 문맥을 잘 따라가고, 문서 요약과 정리형 작업에서 선호되는 편입니다. 읽기 좋은 답변을 기대할 수 있어요.",
+          strengths: [
+            "긴 문서 요약과 분석에 강함",
+            "질문 의도를 잘 파악해 정제된 답변 제공",
+            "리서치와 보고서 작성에 적합"
+          ]
+        },
+        {
+          name: "Google",
+          desc: "실시간 정보와 검색 경험, 웹 생태계와의 연결에 강점을 보입니다. 최신 정보와 업무 연계에 잘 맞아요.",
+          strengths: [
+            "실시간 정보 탐색에 강함",
+            "검색 및 업무 흐름과 자연스럽게 연결됨",
+            "다양한 서비스와의 연동이 편리함"
+          ]
+        }
+      ];
+
+      const switcher = document.getElementById("serviceSwitch");
+      const serviceName = document.getElementById("serviceName");
+      const serviceDesc = document.getElementById("serviceDesc");
+      const serviceStrengths = document.getElementById("serviceStrengths");
+
+      function renderService(index) {
+        const selected = services[index];
+        serviceName.textContent = selected.name;
+        serviceDesc.textContent = selected.desc;
+        serviceStrengths.innerHTML = selected.strengths
+          .map((item) => `<li>${item}</li>`)
+          .join("");
+
+        [...switcher.children].forEach((button, idx) => {
+          button.classList.toggle("active", idx === index);
+        });
+      }
+
+      services.forEach((service, index) => {
+        const button = document.createElement("button");
+        button.textContent = service.name;
+        button.addEventListener("click", () => renderService(index));
+        if (index === 0) button.classList.add("active");
+        switcher.appendChild(button);
+      });
+
+      renderService(0);
+
+      const quizButtons = document.querySelectorAll(".quiz-options button");
+      const result = document.getElementById("quizResult");
+
+      const quizMap = {
+        "문서 요약": "Claude를 먼저 추천해요. 긴 문서를 정리하고 핵심만 뽑는 작업에 잘 맞습니다.",
+        "코드 작성": "OpenAI를 먼저 추천해요. 코드 생성과 설명, 디버깅 도움에 강합니다.",
+        "아이디어 발상": "OpenAI를 추천해요. 브레인스토밍과 여러 방향의 제안에 유리합니다.",
+        "실시간 정보 찾기": "Google 쪽이 더 잘 어울려요. 최신 정보와 검색 기반 작업에 강합니다."
+      };
+
+      quizButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          result.textContent = quizMap[button.dataset.goal] || "추천 결과를 확인해보세요.";
+        });
+      });
+    </script>
+  </body>
+</html>
